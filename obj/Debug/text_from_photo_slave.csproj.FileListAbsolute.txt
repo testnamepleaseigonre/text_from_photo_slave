@@ -1,0 +1,10 @@
+C:\Users\valde\source\repos\text_from_photo_slave\bin\Debug\text_from_photo_slave.exe.config
+C:\Users\valde\source\repos\text_from_photo_slave\bin\Debug\text_from_photo_slave.exe
+C:\Users\valde\source\repos\text_from_photo_slave\bin\Debug\text_from_photo_slave.pdb
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.csprojAssemblyReference.cache
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.Form1.resources
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.Properties.Resources.resources
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.csproj.GenerateResource.cache
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.csproj.CoreCompileInputs.cache
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.exe
+C:\Users\valde\source\repos\text_from_photo_slave\obj\Debug\text_from_photo_slave.pdb
