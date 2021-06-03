@@ -1,0 +1,32 @@
+5.2.2. Data Fusion
+
+In general, the classification of fused data can yield better results than the classification over
+single data sources [59]. A promising direction of investigation is given by the nexus between energy
+consumption, water consumption, and human presence ina house (also gas metering could be an
+additional data source). In an extreme example, a 50% classification between laundry and gardening
+could be better disambiguated by the analysis of instant energy consumption given that one of the
+two activities uses energy and water at the same time. An example of the nexus between energy and
+water is presented in Reference [60]. In that paper, the authors leverage electricity non-intrusive load
+monitoring (NILM) to acquire water disaggregation as a set of water/energy correlated states.
+
+5.2.3. Working at Scale
+
+Applying standard rates derived from sample studies is misleading because of the high variability
+in water use from one customer to another, even among customers with a similar infrastructure and
+social-economic profile. The model extracted from a single house’s data is limited, and does not
+leverage the information hidden in the broader population. What we consider parameters for a single
+house (pipe size, extension of parcel, number of rooms, habits of tenants, etc.) could be considered
+as independent variables in a broader model, comprising a full set of properties in a city or region.
+The collection of massive datasets for an entire city or region is, nowadays, technically feasible and
+possible to maintain in the long term. Hence, an interesting research question is to build and evaluate
+large-scale models.
+
+6. Conclusions
+
+Non-intrusive water disaggregation is a valuable approach for estimating fixture-specific water
+consumption, while keeping installation costs affordable, and, at the same time, the underlying
+complexity of processing remains manageable. We have presented a review of water disaggregation
+methods that make use of either mono-modal sensing or multi-modal sensing (e.g., combining different
+variables, such as water flow, pressure, efc.). The result of our review can be summarized in the
+following conclusions:
+

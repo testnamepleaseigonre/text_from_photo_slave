@@ -15,7 +15,7 @@ namespace text_from_photo_slave
         {
             this.updatable = updatable;
         }
-        public string ImageToText(string filepath)
+        public string ImageToText(string filepath, string filename)
         {
             var ENGLISH_LANGUAGE = @"eng";
 
@@ -32,10 +32,15 @@ namespace text_from_photo_slave
                     {
                         var text = page.GetText();
                         Console.WriteLine(text);
-                        updatable.displayText(text);
+                        updatable.displayText(text,filepath+filename);
                         Console.ReadLine();
 
                         finaltext = text;
+                        using (StreamWriter writer = new StreamWriter(filepath+".txt"))
+                        {
+                            writer.WriteLine(finaltext);
+                            
+                        }
 
                     }
                 }

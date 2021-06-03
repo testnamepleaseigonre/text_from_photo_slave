@@ -56,14 +56,22 @@ namespace text_from_photo_slave
             
         }
 
-        public void displayText(string text)
+        public void displayText(string text, string path)
         {
             Invoke((Action)delegate
             {
                 ResultTextBox.Text = text;
+                PathTextBox.Text = path;
             });
             
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filepath = PathTextBox.Text + ".txt";
+            Sender sender1 = new Sender(filepath);
+            sender1.Send();
+
+        }
     }
 }

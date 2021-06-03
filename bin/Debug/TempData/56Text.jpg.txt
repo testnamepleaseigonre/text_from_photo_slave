@@ -1,0 +1,26 @@
+conscientious feature selection [29.54]. Computation time is sometimes reported for complex methods, such
+
+ 
+
+as deep neural networks [66]. extreme learning machine [67]. or symbolic representation [53.54.68]. as well
+as in comparative analyses [30]. Nevertheless. a comprehensive comparison of results is difficult or
+
+impossible as discussed next.
+
+4. Discussion
+
+Over the past few years many studies have investigated HAR using smartphones. The reviewed literature
+provides detailed descriptions of essential aspects of data collection, data processing, and activity
+classification. The studies have been conducted with one or more objectives. e.g., to limit technological
+imperfections (e.g.. no GPS signal reception indoors), to minimize computational requirements (e.g., online
+systems), and to maximize classification accuracy (all studies). Our review summarizes most frequently
+used methods and offers available alternatives. We do not however identify any one ultimate activity
+recognition procedure, and we doubt that one even exists. This results in part from the complexity of the
+task. Different studies use different activities, signal processing techniques. and classifiers, and each likely
+suffers from specific potential drawbacks.
+
+Some of our concerns relate to the quality of the collected data. While datasets are usually collected in
+laboratory settings, there is little evidence that algorithms trained using data from these controlled settings
+
+generalize to free-living conditions [69.70]. In free-living settings. such aspects as duration, frequency, and
+

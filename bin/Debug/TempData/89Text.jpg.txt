@@ -1,0 +1,34 @@
+2. Understanding Water Usage
+
+For a domestic setting, there are a variety of questions that can be asked, which can lead to insights
+about the water use of a household at different levels of granularity:
+
+- How much water is being used?
+
+- What water is being used—is it hot or cold water, fresh water or grey water?
+
+- When is water being used—how does the water use change over the day, week and seasons?
+
+- | Why is water being used—what are the activities related to water use?
+
+- Where is water being used—at which fixture or fixture type is water being abstracted from? Are
+these indoor or outdoor uses?
+
+- Who is using the water—in a multi-occupancy household or building, how can water use be
+attributable to individuals?
+
+When unravelling insights about domestic water use, it is obvious that not all questions may
+be relevant for all stakeholders and that different exploitations may require a specific water usage
+contextualisation to be obtained.
+
+From a water utility perspective, there are different motivations as to why obtaining insights
+into household level information is important. At the most basic level, water usage information on
+individual households is important for billing purposes. Aggregate monthly or even yearly water
+usage information may be sufficient for water utilities to obtain adequate compensation for their
+domestic water supply. Moreover, in order to achieve water distribution network efficiencies and
+to understand investment levels, the relative costs and benefits of consumption are required; these
+can only be estimated by determining households’ water use [10]. This, in turn, impacts on water
+pricing mechanisms. This information is useful to manage resource constraints and future demands.
+From end-use analysis, utilities can gain insights into how new generation appliances will positively
+affect demand, and can thereby avoid oversupply before it is needed. Having information of water
+

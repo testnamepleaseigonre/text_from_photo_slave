@@ -8,6 +8,6 @@ namespace text_from_photo_slave
 {
     public interface Iupdatable
     {
-        void displayText(string text);
+        void displayText(string text, string path);
     }
 }

@@ -59,7 +59,8 @@ namespace text_from_photo_slave
                         }
                         Console.WriteLine($"File saved [{fileName}]...");
                         ReadImage readImage = new ReadImage(updatable);
-                        readImage.ImageToText(file);
+                        
+                        readImage.ImageToText(file,fileName);
                     }
                 }
             }
