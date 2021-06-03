@@ -26,6 +26,7 @@ namespace text_from_photo_slave
         {
             if(receiver == null)
             {
+                MessageBox.Show("Recieving!");
                 Thread receiverThread = new Thread(() =>
                 {
                     receiver = new Receiver(Environment.ExpandEnvironmentVariables(folderpath), this);
