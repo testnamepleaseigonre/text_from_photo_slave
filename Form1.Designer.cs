@@ -32,11 +32,15 @@ namespace text_from_photo_slave
             this.startReceiverButton = new System.Windows.Forms.Button();
             this.stopReceiverButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ResultTextBox = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // startReceiverButton
             // 
-            this.startReceiverButton.Location = new System.Drawing.Point(264, 45);
+            this.startReceiverButton.Location = new System.Drawing.Point(12, 12);
             this.startReceiverButton.Name = "startReceiverButton";
             this.startReceiverButton.Size = new System.Drawing.Size(112, 23);
             this.startReceiverButton.TabIndex = 0;
@@ -46,7 +50,7 @@ namespace text_from_photo_slave
             // 
             // stopReceiverButton
             // 
-            this.stopReceiverButton.Location = new System.Drawing.Point(264, 231);
+            this.stopReceiverButton.Location = new System.Drawing.Point(130, 12);
             this.stopReceiverButton.Name = "stopReceiverButton";
             this.stopReceiverButton.Size = new System.Drawing.Size(112, 23);
             this.stopReceiverButton.TabIndex = 1;
@@ -57,23 +61,53 @@ namespace text_from_photo_slave
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(300, 136);
+            this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 74);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(230, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // ResultTextBox
+            // 
+            this.ResultTextBox.Location = new System.Drawing.Point(451, 108);
+            this.ResultTextBox.Name = "ResultTextBox";
+            this.ResultTextBox.Size = new System.Drawing.Size(564, 484);
+            this.ResultTextBox.TabIndex = 4;
+            this.ResultTextBox.Text = "";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 108);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(433, 484);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1027, 616);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ResultTextBox);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.stopReceiverButton);
             this.Controls.Add(this.startReceiverButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,6 +118,9 @@ namespace text_from_photo_slave
         private System.Windows.Forms.Button startReceiverButton;
         private System.Windows.Forms.Button stopReceiverButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RichTextBox ResultTextBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
