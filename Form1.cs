@@ -13,24 +13,39 @@ namespace text_from_photo_slave
 {
     public partial class Form1 : Form
     {
+        private Receiver receiver = null;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void startReceiverButton_Click(object sender, EventArgs e)
         {
-            Thread th = new Thread(() =>
+            if(receiver == null)
             {
-                Receiver receiver = new Receiver();
-                Receiver.path = "C:\\Users\\valde\\Desktop\\test";
-                receiver.StartServer();
-            });
+                Thread receiverThread = new Thread(() =>
+                {
+                    receiver = new Receiver(Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\Desktop\test\"));
+                    receiver.Start();
+                });
+                receiverThread.Start();
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void stopReceiverButton_Click(object sender, EventArgs e)
         {
+            if (receiver != null)
+            {
+                
+                receiver.Stop();
+                receiver = null;
+            }
+        }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            stopReceiverButton_Click(sender, e);
         }
     }
 }

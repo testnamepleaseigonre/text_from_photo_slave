@@ -5,56 +5,79 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace text_from_photo_slave
 {
     class Receiver
     {
-        private TcpListener listener = new TcpListener(IPAddress.Any, 80);
+        private static TcpListener listener = null;
 
-        public static string path;
+        private string downloadsFolder;
         public static string Message = "Stopped";
 
-        public void StartServer()
+        public Receiver(string downloadsFolder)
+        {
+            this.downloadsFolder = downloadsFolder;
+            if (listener == null)
+                listener = new TcpListener(IPAddress.Any, 2021);
+        }
+
+        public void Start()
         {
             try
             {
                 listener.Start();
-                Message = "Started";
-                while(true)
+                Console.WriteLine("Receiving started!");
+                while (true)
                 {
                     using (var client = listener.AcceptTcpClient())
                     using (var stream = client.GetStream())
                     {
-                        byte[] fileNameLenghtBytes = new byte[4];
-                        stream.Read(fileNameLenghtBytes, 0, 4);
-                        int fileNameLenght = BitConverter.ToInt32(fileNameLenghtBytes, 0);
-                        byte[] fileNameBytes = new byte[fileNameLenght];
-                        stream.Read(fileNameBytes, 0, fileNameLenght);
-                        string fileName = Encoding.ASCII.GetString(fileNameBytes, 0, fileNameLenght);
-                        using(var output = File.Create(fileName))
+                        byte[] fileNameLengthBytes = new byte[4];
+                        stream.Read(fileNameLengthBytes, 0, 4);
+                        int fileNameLength = BitConverter.ToInt32(fileNameLengthBytes, 0);
+                        byte[] fileNameBytes = new byte[fileNameLength];
+                        stream.Read(fileNameBytes, 0, fileNameLength);
+                        string fileName = Encoding.ASCII.GetString(fileNameBytes, 0, fileNameLength);
+
+                        string file = $"{downloadsFolder}{fileName}";
+
+                        using (var output = File.Create(file))
                         {
-                            Message = "Saving file..";
+                            Console.WriteLine($"Saving file...");
                             var buffer = new byte[1024];
                             int bytesRead;
-                            while((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                            while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
                             {
+                                // progresui ideali vieta
                                 output.Write(buffer, 0, bytesRead);
                             }
                         }
-                        Message = "Saving file complete";
+                        Console.WriteLine($"File saved [{fileName}]...");
                     }
                 }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
-                Message = exc.Message;
+                if (listener != null)
+                    listener.Stop();
+                Console.WriteLine(exc.Message);
             }
             finally
             {
-                listener.Stop();
+                if (listener != null)
+                    listener.Stop();
+                Console.WriteLine("Receiving stopped!");
             }
+        }
+
+        public void Stop()
+        {
+            if (listener != null)
+                listener.Stop();
+            listener = null;
         }
     }
 }
