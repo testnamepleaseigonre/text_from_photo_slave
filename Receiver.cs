@@ -16,9 +16,11 @@ namespace text_from_photo_slave
 
         private string downloadsFolder;
         public static string Message = "Stopped";
+        private Iupdatable updatable;
 
-        public Receiver(string downloadsFolder)
+        public Receiver(string downloadsFolder, Iupdatable updatable)
         {
+            this.updatable = updatable;
             this.downloadsFolder = downloadsFolder;
             if (listener == null)
                 listener = new TcpListener(IPAddress.Any, 2021);
@@ -56,11 +58,8 @@ namespace text_from_photo_slave
                             }
                         }
                         Console.WriteLine($"File saved [{fileName}]...");
-                        ReadImage readImage = new ReadImage();
+                        ReadImage readImage = new ReadImage(updatable);
                         readImage.ImageToText(file);
-                        Console.WriteLine(readImage);
-                        
-                        
                     }
                 }
             }

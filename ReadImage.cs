@@ -10,13 +10,18 @@ namespace text_from_photo_slave
 {
     public class ReadImage
     {
+        private Iupdatable updatable;
+        public ReadImage(Iupdatable updatable)
+        {
+            this.updatable = updatable;
+        }
         public string ImageToText(string filepath)
         {
             var ENGLISH_LANGUAGE = @"eng";
 
             var blogPostImage = filepath;
             string finaltext = "";
-            using (var ocrEngine = new TesseractEngine(@"\text_from_photo_slave\tessdata", ENGLISH_LANGUAGE, EngineMode.Default))
+            using (var ocrEngine = new TesseractEngine(@"C:\Users\valde\source\repos\text_from_photo_slave\tessdata", ENGLISH_LANGUAGE, EngineMode.Default))
             {
                 using (var imageWithText = Pix.LoadFromFile(blogPostImage))
                 {
@@ -24,6 +29,7 @@ namespace text_from_photo_slave
                     {
                         var text = page.GetText();
                         Console.WriteLine(text);
+                        updatable.displayText(text);
                         Console.ReadLine();
 
                         finaltext = text;

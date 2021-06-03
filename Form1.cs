@@ -13,7 +13,7 @@ using Tesseract;
 
 namespace text_from_photo_slave
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, Iupdatable
     {
         private Receiver receiver = null;
         public string folderpath = @"TempData\";
@@ -28,7 +28,7 @@ namespace text_from_photo_slave
             {
                 Thread receiverThread = new Thread(() =>
                 {
-                    receiver = new Receiver(Environment.ExpandEnvironmentVariables(folderpath));
+                    receiver = new Receiver(Environment.ExpandEnvironmentVariables(folderpath), this);
                     receiver.Start();
                 });
                 receiverThread.Start();
@@ -52,6 +52,15 @@ namespace text_from_photo_slave
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        public void displayText(string text)
+        {
+            Invoke((Action)delegate
+            {
+                ResultTextBox.Text = text;
+            });
             
         }
 
