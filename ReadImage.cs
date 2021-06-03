@@ -41,7 +41,7 @@ namespace text_from_photo_slave
             {
 
                 Console.WriteLine(file);
-                //this.Invoke((Action)delegate
+                //this.Invoke((Action)delegate // sitas sudas buvo kad prideti photo kuri ateina ir atvaizduoti teksta formoje
                 //{
                 //    pictureBox1.Image = Image.FromFile(file);
                 //    imageText = ImageToText(file);
