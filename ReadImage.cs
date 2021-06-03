@@ -24,7 +24,7 @@ namespace text_from_photo_slave
             // sito netrink:
             // tavo: C:\Users\valde\source\repos\text_from_photo_slave\tessdata
             // mano: C:\Users\domin\source\repos\text_from_photo_slave\tessdata
-            using (var ocrEngine = new TesseractEngine(@"C:\Users\domin\source\repos\text_from_photo_slave\tessdata", ENGLISH_LANGUAGE, EngineMode.Default))
+            using (var ocrEngine = new TesseractEngine(@"C:\Users\valde\source\repos\text_from_photo_slave\tessdata", ENGLISH_LANGUAGE, EngineMode.Default))
             {
                 using (var imageWithText = Pix.LoadFromFile(blogPostImage))
                 {

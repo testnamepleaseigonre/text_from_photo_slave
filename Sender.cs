@@ -21,7 +21,7 @@ namespace text_from_photo_slave
 
         public void Send()
         {
-            IPAddress receiverIP = IPAddress.Parse("10.16.5.65");
+            IPAddress receiverIP = IPAddress.Parse("192.168.1.149");
             IPEndPoint endPoint = new IPEndPoint(receiverIP, 2020);
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
